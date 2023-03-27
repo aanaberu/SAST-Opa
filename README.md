@@ -30,3 +30,20 @@ Faster time-to-market: By integrating SAST with OPA into the DevOps pipeline, de
 Compliance: OPA can help to enforce compliance policies and regulations, such as GDPR, HIPAA, and PCI DSS. By integrating SAST with OPA, businesses can ensure that their applications comply with these regulations and avoid potential fines or legal issues.
 
 Reputation management: Security breaches and data leaks can be damaging to a company's reputation. By integrating SAST with OPA, businesses can improve the overall security of their applications, reducing the risk of security incidents that could harm their reputation
+
+
+## Usecase 
+
+An end-to-end flow of Checkmarx integration with OPA:
+
+1) Code Scan: A developer submits a code scan request through an API to Checkmarx. The request includes the code repository location and any specific parameters for the scan, such as the scan type, the target programming language, and the scope of the scan.
+
+2) Checkmarx Scan: Checkmarx receives the scan request and initiates the scan process. The code is analyzed for potential security vulnerabilities using Checkmarx's pre-configured set of rules and policies.
+
+2) Scan Results: Once the scan is complete, Checkmarx generates a report that includes the details of any vulnerabilities that were identified in the code. This report is sent back to the developer through the API to Release.
+
+3) OPA Policy: Before the developer can access the Checkmarx report, an OPA policy check is performed. OPA checks whether the developer has the appropriate permissions to access the report, based on the role or other criteria specified in the OPA policy.
+
+4) Policy Decision: OPA makes a decision on whether the developer is allowed to access the Checkmarx report based on the policy check. If the developer has the appropriate permissions, OPA grants access to the report. If not, the request is denied.
+
+5) Report Access: If the developer is granted access to the Checkmarx report, they can view the vulnerabilities identified by Checkmarx and take appropriate action to remediate the issues. If the developer is denied access, they will receive an error message indicating that they do not have the necessary permissions to access the report.
